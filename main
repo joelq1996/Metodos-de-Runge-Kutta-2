@@ -1,0 +1,17 @@
+syms x 
+syms y
+f= x*sqrt(y) ;%funcion
+x0=1;
+x1=1.6;
+y0=4;
+n=3;
+
+try
+[y1,y2,y3] = rungek2(f,x0,x1,y0,n);
+fprintf('Metodos de Runge-Kutta de segundo orden');
+fprintf('\nPor el metodo de Heun obtenemos %f',y1);
+fprintf('\nPor el metodo de Ralston obtenemos %f',y2);
+fprintf('\nPor el metodo de Punto medio obtenemos %f',y3);
+catch err
+    fprintf('error: %s\n', err.message)
+end
